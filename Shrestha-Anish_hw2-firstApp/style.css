@@ -1,0 +1,50 @@
+@font-face {
+    /* Header */
+    font-family: 'OldEnglish';
+    src: url('./assets/fonts/Engravers-Old-English-BT.ttf') format('truetype');
+}
+
+@font-face {
+    /* Body */
+    font-family: 'Minion';
+    src: url('./assets/fonts/minionproregular.ttf') format('truetype');
+}
+body{
+    background-color: whitesmoke;
+    font-family: 'Minion';
+}
+
+.upperHeader {
+    font-family: 'OldEnglish';
+    font-size: 75px;
+
+    text-align: center;
+    margin-top:10 px;
+    margin-bottom: 30 px;
+    padding: 0;
+}
+
+aside{
+    margin-top: 10rem;
+    float: right;
+    width: auto;
+    height: auto;
+    margin-right: 20%;
+}
+
+main{
+    float: left;
+    margin-top: 10rem;
+    margin-left: 5%;
+    font-size: 1.05rem;
+}
+
+
+/* Bottom footer */
+.footer {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
