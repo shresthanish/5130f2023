@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>shrestha-anish_hw3_secondPhaseOfApp</title>
+    <style type="text/css">
+        @import url('./style.css');
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="mynav" class="topNav">
+            <a href="#infoSection">Personal Information</a>
+            <a href="#investments">Financial Information</a>
+            <a href="#filesUpload">Files Upload</a>
+            <a href="#miscellaneous">Facts about me</a>
+            <a href="#formSubmit">Form Submit</a>
+
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="upperHeader">Personal Information</h1>
+
+        <section class="infoSection">
+
+            <article id="name_article">
+                <p id="name_tag">Name</p>
+                <input type="text" placeholder="Enter your first name">
+                <input type="text" placeholder="Enter your last name">
+            </article>
+
+            <article id="address_article">
+                <p id="address_tag">Current Address:</p>
+                <input type="text" placeholder="Address">
+                <input type="text" placeholder="Apt, Floor, Suites">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="State">
+                <input type="text" placeholder="Zipcode">
+            </article>
+
+            <article id="home_address_article">
+                <p id="home_address_tag">Home Address:</p>
+                <input type="text" placeholder="Address">
+                <input type="text" placeholder="Apt, Floor, Suites">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="State">
+                <input type="text" placeholder="Zipcode">
+            </article>
+
+            <article id="desired_location_article">
+                <p id="desired_location_tag">Where would you like to be?</p>
+                <input type="text" placeholder="Address">
+                <input type="text" placeholder="Apt, Floor, Suites">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="State">
+                <input type="text" placeholder="Zipcode">
+            </article>
+
+            <article id="family_address_article">
+                <p id="family_address_tag">Family Address:</p>
+                <input type="text" placeholder="Address">
+                <input type="text" placeholder="Apt, Floor, Suites">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="State">
+                <input type="text" placeholder="Zipcode">
+            </article>
+
+            <article id="preferred_location_article">
+                <p id="preferred_location_tag">Where would you like to live?</p>
+                <input type="text" placeholder="Address">
+                <input type="text" placeholder="Apt, Floor, Suites">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="State">
+                <input type="text" placeholder="Zipcode">
+            </article>
+            
+            <article id="education_level_article">
+                <p id="education_level_tag"> Highest level of education:</p><br>
+                <label><input type="radio" name="education" value="highschool"> High School</label><br>
+                <label><input type="radio" name="education" value="bachelor"> Bachelor's</label> <br>
+                <label><input type="radio" name="education" value="masters"> Master's</label> <br>
+                <label><input type="radio" name="education" value="PhD"> Ph.D</label> <br>
+                <label><input type="radio" name="education" value="Other"> Other</label> <br>
+
+            </article>
+
+            <article id="significant_other_education_level_article">
+                <p id="significant_other_education_level_tag">Your significant other's highest level of education:</p><br>
+                <label><input type="radio" name="education" value="highschool"> High School</label><br>
+                <label><input type="radio" name="education" value="bachelor"> Bachelor's</label> <br>
+                <label><input type="radio" name="education" value="masters"> Master's</label> <br>
+                <label><input type="radio" name="education" value="PhD"> Ph.D</label> <br>
+                <label><input type="radio" name="education" value="Other"> Other</label> <br>
+
+
+            </article>
+
+            
+            <article id="significant_other_birthplace_article">
+                <p id="significant_other_birthplace_tag">Where was your significant other born?</p>
+                <input type="text" placeholder="Address">
+                <input type="text" placeholder="Apt, Floor, Suites">
+                <input type="text" placeholder="City">
+                <input type="text" placeholder="State">
+                <input type="text" placeholder="Zipcode">
+            </article>
+            
+        </section>
+
+        <h1 class="upperHeader">Financial Information</h1>
+
+        <section id="investments">
+            <article id="personal_investments_article">
+                <p id="personal_investments_tag">Personal Investments:</p>
+                <textarea id="personal_investments_input" rows="4" cols="50">Please enter your personal investments details</textarea>
+            </article>
+
+            <article id="family_investments_article">
+                <p id="family_investments_tag">Family Investments:</p>
+                <textarea id="family_investments_input" rows="4" cols="50">Please enter your family's investments details</textarea>
+            </article>
+        </section>
+
+        <h1 class="upperHeader">Files Upload</h1>
+        <section id="filesUpload">
+            <article id="profilePictures_article">
+                <p id="profilePictures_tag">Upload your profile picture:</p>
+                <input type="file" id="profilePictures" name="pictures">
+            </article>
+
+            <article id="resume_article">
+                <p id="resume_tag">Upload your resume:</p>
+                <input type="file" id="resume" name="resume">
+            </article>
+        </section>
+
+        <h1 class="upperHeader">Facts about me</h1>
+
+        <section id="miscellaneous">
+            <article id="marital_article">
+                    <p id="marital_tag">Are you married?</p>
+                    <label><input type="radio" name="marriage" value="yes"> Yes</label>
+                    <label><input type="radio" name="marriage" value="no"> No</label>
+            </article>
+
+            <article id="favcolor_article">
+                <p id="favcolor_tag">Select your favorite color:</p>
+                <input type="color" id="favcolor" name="favcolor" value="#0000FF">
+            </article>
+
+            <article id="least_favcolor_article">
+                <p id="least_favcolor_tag">Select your least favorite color:</p>
+                <input type="color" id="least_favcolor" name="least_favcolor" value="#ff0000">
+            </article>
+
+            <article id="language_article">
+                <p id="language_tag">Languages you can speak:</p><br>
+                <label><input type="checkbox" id="english" name="language" value="English"> English</label><br>
+                <label><input type="checkbox" id="spanish" name="language" value="Spanish"> Spanish</label><br>
+                <label><input type="checkbox" id="french" name="language" value="French"> French</label><br>
+                <label><input type="checkbox" id="hindi" name="language" value="Hindi"> Hindi</label><br>
+                <label><input type="checkbox" id="others" name="language" value="Others"> Others</label><br>
+
+            </article>
+
+        </section>
+
+        <h1 class="upperHeader">Form Submit</h1>
+
+        <section id="formSubmit">
+            <form onsubmit="event.preventDefault(); submitForm();">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email address">
+                <input type="submit" value="Submit">
+            </form>
+            <p id="message" style="display: none;">Thank you! Your personal information is secure with us.</p>
+        </section>
+        
+        <script>
+            function submitForm() {
+                document.getElementById("message").style.display = "block";
+            }
+        </script>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Anish</p>
+    </footer>
+
+</body>
+
+</html>
