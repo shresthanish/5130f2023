@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homepage</title>
+</head>
+<body>
+    <!--  <!-->
+    <header>
+        <h1 class="Test" style="text-align: center;">Login Page</h1>
+    </header>
+
+    <main>
+        <article>
+            <section id="loginpage" style="text-align: center;">
+                <h1 class="loginpage">RegEx Test</h1>
+                <form action="/login" method="POST">
+                    <label for="email" >Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    
+                    <br>                    
+                    <br>
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone" required>
+                                        
+                    
+                    <br>   
+                    <br>           
+                    <label for="webpage">Webpage:</label>
+                    <input type="text" id="webpage" name="webpage" required>                                                            
+
+                    <br>
+                    <br>
+                    <input type="submit" value="submit" style="margin-right: 2.5%;">
+                    <input type="reset" value="Cancel">                
+                </form>
+            </section>
+        </article>
+
+    </main>
+
+    <script>
+
+        // Get the email input element
+        const emailInput = document.getElementById('email');
+
+        // Add an event listener to the input element
+        emailInput.addEventListener('input', function() {
+        // Get the value of the input
+        const emailValue = emailInput.value;
+
+        // Test the email value against the regex pattern
+        const regemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const isValidEmail = regemail.test(emailValue);
+
+        // Display the error message if the email is not valid
+        if (!isValidEmail) {
+            emailInput.setCustomValidity('Invalid email address');
+            emailInput.reportValidity();
+        } else {
+            emailInput.setCustomValidity('');
+        }
+        });
+
+
+        // Get the phone number input element
+        const phoneInput = document.getElementById('phone');
+
+        // Add an event listener to the input element
+        phoneInput.addEventListener('input', function() {
+        // Get the value of the input
+        const phoneValue = phoneInput.value;
+
+        // Test the phone value against the regex pattern
+        const phoneNumberRegex = /(?:\(\d{3}\)|\d{3})[-. ]?\d{3}[-. ]?\d{4}\b/;
+        const isValidPhoneNumber = phoneNumberRegex.test(phoneValue);
+
+        // Display the error message if the phone number is not valid
+        if (!isValidPhoneNumber) {
+            phoneInput.setCustomValidity('Invalid phone number');
+            phoneInput.reportValidity();
+        } else {
+            phoneInput.setCustomValidity('');
+        }
+        });
+
+        
+        // Get the webpage input element
+        const webpageInput = document.getElementById('webpage');
+
+        // Add an event listener to the input element
+        webpageInput.addEventListener('input', function() {
+        // Get the value of the input
+        const webpageValue = webpageInput.value;
+
+        // Test the webpage value against the regex pattern
+        const urlRegex = /\b(?:https?:\/\/|www\.)[a-zA-Z0-9.-]+\.(?:com|org|edu|[a-z]{2,})\S*\b/;
+        const isValidWebpage = urlRegex.test(webpageValue);
+
+        // Display the error message if the webpage is not valid
+        if (!isValidWebpage) {
+            webpageInput.setCustomValidity('Invalid webpage URL');
+            webpageInput.reportValidity();
+        } else {
+            webpageInput.setCustomValidity('');
+        }
+});
+
+
+    </script>
+    
+</body>
+</html>
