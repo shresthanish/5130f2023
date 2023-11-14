@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Use a reverse geocoding service to get country information based on coordinates
+            // This is a simple example using a free service, and it may not be as accurate or reliable as paid services
+            const apiUrl = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
+
+            // Fetch the country information
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const city = data.address.city || data.address.village || data.address.town;
+                    const state = data.address.state || data.address.region;
+                    const country = data.address.country;
+
+                    // Use the country information to determine the currency (you may need a more comprehensive mapping)
+                    let currency;
+                    switch (country) {
+                        case "United States":
+                            currency = "USD";
+                            break;
+                        case "United Kingdom":
+                            currency = "GBP";
+                            break;
+                        case "Europe":
+                            currency = "EUR";
+                            break;
+                        case "Australia":
+                            currency = "AUD";
+                            break;
+                        // Add more cases as needed
+
+                        default:
+                            currency = "Unknown";
+                    }
+
+                    // Display the currency information
+                    document.getElementById("locationAndCurrencyInfo").innerHTML = `Your current location is ${city}, ${state}, ${country}, and the currency is ${currency}.`;
+
+                    // Display the user's language
+                    const language = navigator.language || navigator.userLanguage;
+                    document.getElementById("languageInfo").innerHTML = `Your language is ${language}.`;
+
+                    const apiKey = '94a9789aa1c29f191a4d49ee7571ea59';
+                    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiKey}`;
+
+                    // Fetch the weather information
+                    fetch(weatherUrl)
+                    .then(response => response.json())
+                    .then(weatherData => {
+                        const temperature = weatherData.main.temp;
+                        const weatherDescription = weatherData.weather[0].description;
+
+                        //document.getElementById("weatherInfo").innerHTML = `The current temperature is ${temperature}°F.`;
+                        document.getElementById("weatherInfo").innerHTML = `It is ${temperature.toFixed(2)}°F with ${weatherDescription}.`;
+
+                    })
+                    .catch(error => {
+                        console.error("Error fetching weather information:", error);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching country information:", error);
+                });
+                
+        }
+    </script>
+</head>
+<body>
+    <h1>User Location Information</h1>
+    <button onclick="getLocation()">Get Information</button>
+    <p id="locationAndCurrencyInfo"></p>
+    <p id="languageInfo"></p>
+    <p id="weatherInfo"></p>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>#comp5130f2023 - 2023-11-13 lab submission</title>
+</head>
+
+<body>
+    <h1>Welcome to our website!</h1>
+
+    <h2>Sign in for existing user:</h2>
+    <form action="/signin" method="POST">
+        <label for="existing-email">Email:</label>
+        <input type="email" id="existing-email" name="existing-email" required>
+
+
+        <label for="existing-password">Password:</label>
+        <input type="password" id="existing-password" name="existing-password" required>
+
+
+        <input type="submit" value="Sign in" formaction="userInfo.html">
+        </form>
+
+    <script>
+        // Get the email input element
+        const emailInput = document.getElementById('existing-email');
+    
+        // Add an event listener to the input element
+        emailInput.addEventListener('input', function() {
+        // Get the value of the input
+        const emailValue = emailInput.value;
+    
+        // Test the email value against the regex pattern
+        const regemail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const isValidEmail = regemail.test(emailValue);
+    
+        // Display the error message if the email is not valid
+        if (!isValidEmail) {
+            emailInput.setCustomValidity('Invalid email address');
+            emailInput.reportValidity();
+        } else {
+            emailInput.setCustomValidity('');
+        }
+        });
+
+        // Get the password input element
+        const passwordInput = document.getElementById('existing-password');
+
+        // Add an event listener to the input element
+        passwordInput.addEventListener('input', function() {
+        // Get the value of the input
+        const passwordValue = passwordInput.value;
+
+        // Test the password value against the regex pattern
+        const regpassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{8,}$/;
+        const isValidPassword = regpassword.test(passwordValue);
+
+        // Display the error message if the password is not valid
+        if (!isValidPassword) {
+            passwordInput.setCustomValidity('Invalid Password');
+            passwordInput.reportValidity();
+        } else {
+            passwordInput.setCustomValidity('');
+        }
+        });
+        </script>
+</body>
+
+</html>
