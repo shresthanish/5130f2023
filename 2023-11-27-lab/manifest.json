@@ -1,0 +1,14 @@
+{
+    "name": "2023-11-27-lab",
+    "short_name": "2023-11-27-lab",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#3f51b5",
+    "icons": [
+      {
+      },
+      {
+      }
+    ]
+  }
